@@ -1,0 +1,509 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - unwanted_messages
+  - ask_weather
+  - choose_language
+  - inquire_agri_clinics_scheme
+  - inquire_integrated_scheme_agri_coop
+  - inquire_atma_scheme
+  - inquire_movcdner_scheme
+  - inquire_smam_scheme
+  - inquire_midh_scheme
+  - inquire_nfsm_scheme
+  - inquire_pdmc_scheme
+  - inquire_pmfby_scheme
+  - inquire_pm_kisan_scheme
+  - inquire_rkvy_scheme
+  - inquire_aif_scheme
+  - inquire_agmarknet_scheme
+  - inquire_online_pesticide_reg_scheme
+  - inquire_plant_quarantine_scheme
+  - inquire_dbt_agri_scheme
+  - inquire_pm_krishi_sinchayee_yojana
+  - inquire_kisan_call_center_scheme
+  - inquire_mkisan_scheme
+  - inquire_jaivik_kheti_scheme
+  - inquire_enam_scheme
+  - inquire_shc_scheme
+  - inquire_pm_kmy_scheme
+  - inquire_miss_scheme
+  - inquire_fpo_promotion_scheme
+  - inquire_nbhm_scheme
+  - inquire_mis_pss_scheme
+  - inquire_namo_drone_didi_scheme
+  - inquire_rad_scheme
+  - inquire_mif_scheme
+  - inquire_pkvy_scheme
+  - inquire_crm_scheme
+  - inquire_agro_forestry_scheme
+  - inquire_smsp_scheme
+  - inquire_nmeo_oil_palm_scheme
+  - inquire_nbm_scheme
+  - inquire_isam_scheme
+  - ask_seed_info
+  - translate_to_tamil
+  - out_of_scope
+
+entities:
+  - crop_name
+  - location
+
+responses:
+  utter_ask_language:
+    - text: "Which language do you prefer? Tamil or English?"
+      buttons:
+        - title: "English"
+          payload: "/choose_language{\"language\": \"en\"}"
+        - title: "Tamil"
+          payload: "/choose_language{\"language\": \"ta\"}"
+  utter_tamil_welcome:
+    - text: "கிரீன் கார்ட் பாட்டிற்கு வரவேற்கின்றேன்! நான் எவ்வாறு உதவ முடியுமா?"
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+  utter_ask_how_can_help:
+    - text: "Hi, how can I help you today?"
+    - text: "Hello! How can I assist you?"
+  utter_unwanted_messages:
+    - text: "Sorry, I am just a chatbot 🤖. I am here to assist you with your queries."
+  utter_out_of_scope:
+    - text: "I'm here to help you with agriculture. Please ask me anything related to crops, soil, irrigation, or farming help."
+  utter_ask_text_to_translate:
+    - text: "What would you like to translate to Tamil?"
+  utter_agri_clinics_scheme:
+    - text: "The Agri Clinics Scheme provides support for setting up agri-clinics and agribusiness centers by trained agricultural professionals."
+  utter_integrated_scheme_agri_coop:
+    - text: |
+        **Scheme:** Integrated Scheme on Agriculture Cooperation
+        **Aim:** Provides financial assistance to cooperatives to enhance economic conditions in agriculture and allied sectors.
+        **Start Date:** 2010-06-01
+        **Duration:** Ongoing
+        **Benefits:** Financial support for cooperative development.
+        **Eligible Crops:** All crops
+        **Financial Assistance:** Varies based on the project undertaken by the cooperative.
+        **Repayment:** As per scheme guidelines.
+  utter_atma_scheme:
+    - text: |
+        **Scheme:** Agriculture Technology Management Agency (ATMA)
+        **Aim:** Strengthens the agricultural extension system and disseminates agricultural technologies to farmers.
+        **Start Date:** 2005-07-01
+        **Duration:** Ongoing
+        **Benefits:** Capacity building, training programs, and demonstrations for farmers.
+        **Eligible Crops:** All crops
+        **Financial Assistance:** Government-funded training and demonstrations.
+        **Repayment:** Not applicable.
+  utter_movcdner_scheme:
+    - text: |
+        **Scheme:** Mission Organic Value Chain Development for North Eastern Region (MOVCDNER)
+        **Aim:** Promotes organic farming in the North Eastern Region by developing certified organic production clusters.
+        **Start Date:** 2015-03-01
+        **Duration:** Ongoing
+        **Benefits:** Financial assistance for organic farming infrastructure and certification.
+        **Eligible Crops:** Organic crops in the North Eastern Region.
+        **Financial Assistance:** Subsidies up to Rs 1035.17 crore released.
+        **Repayment:** Not applicable.
+  utter_smam_scheme:
+    - text: |
+        **Scheme:** Sub Mission on Agriculture Mechanization (SMAM)
+        **Aim:** Increases accessibility of farm mechanization for small and marginal farmers.
+        **Start Date:** 2014-04-01
+        **Duration:** Ongoing
+        **Benefits:** Subsidies for purchasing agricultural machinery and establishing Custom Hiring Centres.
+        **Eligible Crops:** All crops
+        **Financial Assistance:** Rs. 6748.78 crore released.
+        **Repayment:** Farmers pay subsidized rates.
+  utter_midh_scheme:
+    - text: |
+        **Scheme:** Mission for Integrated Development of Horticulture (MIDH)
+        **Aim:** Promotes growth of the horticulture sector, including fruits, vegetables, and spices.
+        **Start Date:** 2014-04-01
+        **Duration:** Ongoing
+        **Benefits:** Subsidies for plantation, infrastructure, and market linkages.
+        **Eligible Crops:** Fruits, vegetables, spices, flowers, etc.
+        **Financial Assistance:** Covers 12.95 lakh ha since 2014-15.
+        **Repayment:** Not applicable.
+  utter_nfsm_scheme:
+    - text: |
+        **Scheme:** National Food Security Mission (NFSM)
+        **Aim:** Increases production of rice, wheat, pulses, and coarse cereals.
+        **Start Date:** 2007-10-01
+        **Duration:** Ongoing
+        **Benefits:** Subsidies for seeds, machinery, and irrigation devices.
+        **Eligible Crops:** Rice, wheat, pulses, coarse cereals.
+        **Financial Assistance:** Varies by crop and farmer category.
+        **Repayment:** Not applicable.
+  utter_pdmc_scheme:
+    - text: |
+        **Scheme:** Per Drop More Crop (PDMC)
+        **Aim:** Enhances water use efficiency through micro-irrigation systems.
+        **Start Date:** 2015-06-01
+        **Duration:** Ongoing
+        **Benefits:** Subsidies for drip and sprinkler systems.
+        **Eligible Crops:** All crops suitable for micro-irrigation.
+        **Financial Assistance:** Covers 78 lakh hectares.
+        **Repayment:** Not applicable.
+  utter_pmfby_scheme:
+    - text: |
+        **Scheme:** Pradhan Mantri Fasal Bima Yojana (PMFBY)
+        **Aim:** Provides crop insurance against natural risks.
+        **Start Date:** 2016-02-18
+        **Duration:** Ongoing
+        **Benefits:** Insurance coverage with claim payments of Rs. 150589.10 crore.
+        **Eligible Crops:** Food crops, oilseeds, horticultural crops.
+        **Financial Assistance:** Premium subsidies (2% Kharif, 1.5% Rabi).
+        **Repayment:** Not applicable.
+  utter_pm_kisan_scheme:
+    - text: |
+        **Scheme:** Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)
+        **Aim:** Provides income support to landholding farmers.
+        **Start Date:** 2019-02-24
+        **Duration:** Ongoing
+        **Benefits:** ₹6,000 per year in three installments.
+        **Eligible Crops:** All crops
+        **Financial Assistance:** ₹6,000 per year via DBT.
+        **Repayment:** Not applicable.
+  utter_rkvy_scheme:
+    - text: |
+        **Scheme:** Rashtriya Krishi Vikas Yojana (RKVY - RAFTAAR)
+        **Aim:** Supports state-level agricultural development and startups.
+        **Start Date:** 2007-08-01
+        **Duration:** Ongoing
+        **Benefits:** Grants for infrastructure and startups (Rs. 106.25 crore).
+        **Eligible Crops:** All agricultural activities.
+        **Financial Assistance:** Grants to states.
+        **Repayment:** Not applicable.
+  utter_aif_scheme:
+    - text: |
+        **Scheme:** Agriculture Infrastructure Fund (AIF)
+        **Aim:** Provides debt financing for post-harvest infrastructure.
+        **Launch Date:** 2020-21
+        **Duration:** FY 2020-21 to FY 2032-33
+        **Benefits:** Loans with 3% interest subvention.
+        **Eligible Crops:** All agricultural produce.
+        **Financial Assistance:** Loans up to ₹2 crores.
+        **Repayment:** Up to 7 years.
+  utter_agmarknet_scheme:
+    - text: |
+        **Scheme:** AGMARKNET
+        **Aim:** Provides real-time market price information.
+        **Publish Date:** 2014-03-14
+        **Duration:** Ongoing
+        **Benefits:** Access to market price updates.
+        **Eligible Crops:** All traded crops.
+        **Financial Assistance:** Government-funded.
+        **Repayment:** Not applicable.
+  utter_online_pesticide_reg_scheme:
+    - text: |
+        **Scheme:** Online Pesticide Registration
+        **Aim:** Streamlines pesticide registration.
+        **Publish Date:** 2009-09-23
+        **Duration:** Ongoing
+        **Benefits:** Faster registration process.
+        **Eligible Crops:** All crops using pesticides.
+        **Financial Assistance:** Fees apply.
+        **Repayment:** Not applicable.
+  utter_plant_quarantine_scheme:
+    - text: |
+        **Scheme:** Plant Quarantine Clearance
+        **Aim:** Ensures safe plant import/export.
+        **Publish Date:** 2011-01-05
+        **Duration:** Ongoing
+        **Benefits:** Protects agriculture from pests.
+        **Eligible Crops:** All plants.
+        **Financial Assistance:** Fees may apply.
+        **Repayment:** Not applicable.
+  utter_dbt_agri_scheme:
+    - text: |
+        **Scheme:** Direct Benefit Transfer (DBT) in Agriculture
+        **Aim:** Transfers subsidies directly to farmers’ accounts.
+        **Publish Date:** 2014-05-12
+        **Duration:** Ongoing
+        **Benefits:** Transparent subsidy disbursement.
+        **Eligible Crops:** All schemes.
+        **Financial Assistance:** Subsidy transfer.
+        **Repayment:** Not applicable.
+  utter_pm_krishi_sinchayee_yojana:
+    - text: |
+        **Scheme:** Pradhan Mantri Krishi Sinchayee Yojana (PMKSY)
+        **Aim:** Enhances irrigation access and efficiency.
+        **Publish Date:** 2015
+        **Duration:** Ongoing
+        **Benefits:** Subsidies for irrigation infrastructure.
+        **Eligible Crops:** All crops.
+        **Financial Assistance:** Subsidies for projects.
+        **Repayment:** Not applicable.
+  utter_kisan_call_center_scheme:
+    - text: |
+        **Service:** Kisan Call Center (KCC)
+        **Aim:** Provides agricultural advisory via toll-free number.
+        **Publish Date:** 2004
+        **Duration:** Ongoing
+        **Benefits:** Expert farming guidance.
+        **Eligible Crops:** All crops.
+        **Financial Assistance:** Government-funded.
+        **Repayment:** Not applicable.
+  utter_mkisan_scheme:
+    - text: |
+        **Service:** mKisan Portal / SMS Service
+        **Aim:** Delivers agricultural advisories via SMS.
+        **Publish Date:** 2013
+        **Duration:** Ongoing
+        **Benefits:** Timely information on weather and schemes.
+        **Eligible Crops:** Various crops.
+        **Financial Assistance:** Government-funded.
+        **Repayment:** Not applicable.
+  utter_jaivik_kheti_scheme:
+    - text: |
+        **Portal:** Jaivik Kheti Portal
+        **Aim:** Promotes organic farming and marketing.
+        **Publish Date:** 2015-05-18
+        **Duration:** Ongoing
+        **Benefits:** Platform for organic farmers.
+        **Eligible Crops:** Organic crops.
+        **Financial Assistance:** Linked to PKVY/MOVCDNER.
+        **Repayment:** Not applicable.
+  utter_enam_scheme:
+    - text: |
+        **Platform:** e-NAM
+        **Aim:** Unified national electronic market for commodities.
+        **Publish Date:** 2016-04
+        **Duration:** Ongoing
+        **Benefits:** Transparent trading.
+        **Eligible Crops:** All notified commodities.
+        **Financial Assistance:** Government-funded.
+        **Repayment:** Not applicable.
+  utter_shc_scheme:
+    - text: |
+        **Scheme:** Soil Health Card (SHC)
+        **Aim:** Provides soil nutrient status and recommendations.
+        **Publish Date:** 2015-02
+        **Duration:** Ongoing
+        **Benefits:** Improves soil health.
+        **Eligible Crops:** All crops.
+        **Financial Assistance:** Government-funded.
+        **Repayment:** Not applicable.
+  utter_pm_kmy_scheme:
+    - text: |
+        **Scheme:** Pradhan Mantri Kisan MaanDhan Yojana (PM-KMY)
+        **Aim:** Provides pension for small farmers.
+        **Launch Date:** 2019-09-12
+        **Duration:** Ongoing
+        **Benefits:** ₹3,000 monthly pension after age 60.
+        **Eligible Crops:** Small/marginal farmers.
+        **Financial Assistance:** Matching contribution.
+        **Repayment:** Farmer contributes ₹55-₹200 monthly.
+  utter_miss_scheme:
+    - text: |
+        **Scheme:** Modified Interest Subvention Scheme (MISS)
+        **Aim:** Provides concessional agricultural loans.
+        **Launch Date:** Ongoing
+        **Duration:** Yearly renewable
+        **Benefits:** Loans at 7% interest, 4% with prompt repayment.
+        **Eligible Crops:** All agricultural activities.
+        **Financial Assistance:** Rs. 5,69,974 crore sanctioned.
+        **Repayment:** Farmers repay principal + interest.
+  utter_fpo_promotion_scheme:
+    - text: |
+        **Scheme:** Formation & Promotion of 10,000 FPOs
+        **Aim:** Promotes FPOs for market access.
+        **Launch Date:** 2020
+        **Duration:** Ongoing
+        **Benefits:** Financial assistance up to Rs. 18 lakh.
+        **Eligible Crops:** All commodities.
+        **Financial Assistance:** Rs. 6865 crore outlay.
+        **Repayment:** Loans repaid.
+  utter_nbhm_scheme:
+    - text: |
+        **Scheme:** National Beekeeping and Honey Mission (NBHM)
+        **Aim:** Promotes beekeeping for income.
+        **Launch Date:** 2020
+        **Duration:** Ongoing
+        **Benefits:** Support for apiaries and training.
+        **Eligible Crops:** Beekeeping activities.
+        **Financial Assistance:** Rs. 202 crore for 160 projects.
+        **Repayment:** Not applicable.
+  utter_mis_pss_scheme:
+    - text: |
+        **Schemes:** Market Intervention Scheme (MIS) and Price Support Scheme (PSS)
+        **Aim:** Protects farmers via procurement at MSP/MIP.
+        **Launch Date:** Ongoing
+        **Duration:** As needed
+        **Benefits:** Direct procurement.
+        **Eligible Crops:** Horticultural crops (MIS), pulses, oilseeds (PSS).
+        **Financial Assistance:** Direct payments.
+        **Repayment:** Not applicable.
+  utter_namo_drone_didi_scheme:
+    - text: |
+        **Scheme:** Namo Drone Didi
+        **Aim:** Empowers women SHGs with drones.
+        **Launch Date:** 2024
+        **Duration:** 2024-25 to 2025-26
+        **Benefits:** 80% subsidy for 15,000 drones.
+        **Eligible Crops:** All crops for drone use.
+        **Financial Assistance:** Rs. 1261 crore outlay.
+        **Repayment:** SHGs arrange 20% balance.
+  utter_rad_scheme:
+    - text: |
+        **Scheme:** Rainfed Area Development (RAD)
+        **Aim:** Promotes integrated farming in rainfed areas.
+        **Launch Date:** 2014-15
+        **Duration:** Ongoing
+        **Benefits:** Supports multi-cropping and livestock.
+        **Eligible Crops:** Horticulture, livestock.
+        **Financial Assistance:** Rs. 1673.58 crore.
+        **Repayment:** Not applicable.
+  utter_mif_scheme:
+    - text: |
+        **Fund:** Micro Irrigation Fund (MIF)
+        **Aim:** Expands micro-irrigation via loans.
+        **Launch Date:** Ongoing
+        **Duration:** Ongoing
+        **Benefits:** Loans at 3% lower interest.
+        **Eligible Crops:** All crops for micro-irrigation.
+        **Financial Assistance:** Rs. 4710.96 crore approved.
+        **Repayment:** States repay loans.
+  utter_pkvy_scheme:
+    - text: |
+        **Scheme:** Paramparagat Krishi Vikas Yojana (PKVY)
+        **Aim:** Promotes organic farming via clusters.
+        **Launch Date:** 2015
+        **Duration:** Ongoing
+        **Benefits:** Support for inputs and certification.
+        **Eligible Crops:** Organic crops.
+        **Financial Assistance:** Rs. 50,000/ha over 3 years.
+        **Repayment:** Not applicable.
+  utter_crm_scheme:
+    - text: |
+        **Scheme:** Crop Residue Management (CRM)
+        **Aim:** Prevents stubble burning via machinery subsidies.
+        **Launch Date:** 2018-19
+        **Duration:** Ongoing
+        **Benefits:** 50% subsidy for farmers.
+        **Eligible Crops:** Rice, wheat residue.
+        **Financial Assistance:** Rs. 3333.17 crore.
+        **Repayment:** Farmers pay subsidized rates.
+  utter_agro_forestry_scheme:
+    - text: |
+        **Scheme:** Agro-Forestry (SMAF)
+        **Aim:** Encourages tree plantation on farmlands.
+        **Launch Date:** 2016
+        **Duration:** Ongoing
+        **Benefits:** Support for nurseries and materials.
+        **Eligible Crops:** Tree species.
+        **Financial Assistance:** Subsidies for inputs.
+        **Repayment:** Not applicable.
+  utter_smsp_scheme:
+    - text: |
+        **Scheme:** Sub-Mission on Seed and Planting Material (SMSP)
+        **Aim:** Ensures quality seed availability.
+        **Launch Date:** Ongoing
+        **Duration:** Ongoing
+        **Benefits:** Supports seed production and infrastructure.
+        **Eligible Crops:** All crops.
+        **Financial Assistance:** Grants/subsidies.
+        **Repayment:** Varies by component.
+  utter_nmeo_oil_palm_scheme:
+    - text: |
+        **Scheme:** National Mission on Edible Oils (NMEO) - Oil Palm
+        **Aim:** Promotes oil palm cultivation.
+        **Launch Date:** 2021
+        **Duration:** 2021-22 to 2025-26
+        **Benefits:** Support for planting and processing.
+        **Eligible Crops:** Oil Palm.
+        **Financial Assistance:** Subsidies and price assurance.
+        **Repayment:** Not applicable.
+  utter_nbm_scheme:
+    - text: |
+        **Scheme:** National Bamboo Mission (NBM)
+        **Aim:** Promotes bamboo cultivation and processing.
+        **Launch Date:** 2018-19
+        **Duration:** Ongoing
+        **Benefits:** Support for plantations and processing.
+        **Eligible Crops:** Bamboo.
+        **Financial Assistance:** Subsidies for 46000 ha.
+        **Repayment:** Varies by component.
+  utter_isam_scheme:
+    - text: |
+        **Scheme:** Integrated Scheme for Agriculture Marketing (ISAM)
+        **Aim:** Develops marketing infrastructure.
+        **Launch Date:** Ongoing
+        **Duration:** Ongoing
+        **Benefits:** Upgrades markets, supports e-NAM.
+        **Eligible Crops:** All commodities.
+        **Financial Assistance:** 1389 mandis integrated.
+        **Repayment:** Depends on loan component.
+
+actions:
+  - action_get_weather
+  - action_answer_from_csv
+  - action_translate_to_tamil
+  - action_welcome
+  - action_handle_greet
+  - utter_agri_clinics_scheme
+  - utter_integrated_scheme_agri_coop
+  - utter_atma_scheme
+  - utter_movcdner_scheme
+  - utter_smam_scheme
+  - utter_midh_scheme
+  - utter_nfsm_scheme
+  - utter_pdmc_scheme
+  - utter_pmfby_scheme
+  - utter_pm_kisan_scheme
+  - utter_rkvy_scheme
+  - utter_aif_scheme
+  - utter_agmarknet_scheme
+  - utter_online_pesticide_reg_scheme
+  - utter_plant_quarantine_scheme
+  - utter_dbt_agri_scheme
+  - utter_pm_krishi_sinchayee_yojana
+  - utter_kisan_call_center_scheme
+  - utter_mkisan_scheme
+  - utter_jaivik_kheti_scheme
+  - utter_enam_scheme
+  - utter_shc_scheme
+  - utter_pm_kmy_scheme
+  - utter_miss_scheme
+  - utter_fpo_promotion_scheme
+  - utter_nbhm_scheme
+  - utter_mis_pss_scheme
+  - utter_namo_drone_didi_scheme
+  - utter_rad_scheme
+  - utter_mif_scheme
+  - utter_pkvy_scheme
+  - utter_crm_scheme
+  - utter_agro_forestry_scheme
+  - utter_smsp_scheme
+  - utter_nmeo_oil_palm_scheme
+  - utter_nbm_scheme
+  - utter_isam_scheme
+  - utter_tamil_welcome
+  - utter_ask_text_to_translate
+
+slots:
+  text_to_translate:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+  location:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: location
+  language:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_intent
+        intent: choose_language
+        value: english
+      - type: from_intent
+        intent: choose_language
+        value: tamil
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
